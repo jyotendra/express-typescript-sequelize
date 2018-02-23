@@ -10,11 +10,11 @@
         "sourceMap": true,
         "baseUrl": ".",
         "paths": {
-            "@models/*": ["src/models/*"],
+            "@models/*": ["src/db/models/*"],
             "@routers/*": ["src/routers/*"],
             "@doa/*": ["src/doa/*"],
             "@controllers/*": ["src/controllers/*"],
-            "@config/*": ["src/config/*"],
+            "@config/*": ["config/*"],
             "@src/*": ["src/*"],
             "*": ["./*"]
         }

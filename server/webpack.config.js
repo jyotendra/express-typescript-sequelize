@@ -24,7 +24,7 @@ module.exports = {
       "@routers": path.resolve(__dirname, 'src', 'routers'),
       "@doa": path.resolve(__dirname, 'src', 'doa'),
       "@controllers": path.resolve(__dirname, 'src', 'controllers'),
-      "@config": path.resolve(__dirname, 'src', 'config'),
+      "@config": path.resolve(__dirname, 'config'),
       "@src":path.resolve(__dirname, 'src'),
     }
   },

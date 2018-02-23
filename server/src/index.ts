@@ -1,7 +1,6 @@
 import * as express from 'express';
 import routers from './routers/index';
 import {install as sourceMapInstall} from 'source-map-support';
-import config from '@models/index.model';
 
 // console.log(config);
 
