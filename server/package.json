@@ -19,7 +19,8 @@
     "pg": "7.4.1"
   },
   "peerDependencies": {
-    "nodemon": "1.15.1"
+    "nodemon": "1.15.1",
+    "sequelize-cli": "4.0.0"
   },
   "devDependencies": {
     "@types/express": "4.11.1",

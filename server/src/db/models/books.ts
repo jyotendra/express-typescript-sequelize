@@ -1,25 +1,25 @@
 import * as Sequelize from 'sequelize';
 
-export interface BooksAttributes {
-    id?: string;
-    title?: string;
+export interface BookAttributes {
+    Id?: string;
+    Title?: string;
 }
 
-export interface BookInstance extends Sequelize.Instance<BooksAttributes> {
-    id: string;
-    title: string;
-    createdAt: string;
-    updatedAt: string;
+export interface BookInstance extends Sequelize.Instance<BookAttributes> {
+    Id: string;
+    Title: string;
+    CreatedAt: string;
+    UpdatedAt: string;
 }
 
 export  function defineBooks(sequelize: Sequelize.Sequelize, dataTypes: Sequelize.DataTypes) {
-    const Books = sequelize.define('Books', {
-        id: dataTypes.UUIDV4,
-        title: dataTypes.STRING
+    const Book = sequelize.define('Book', {
+        Id: dataTypes.UUIDV4,
+        Title: dataTypes.STRING
     });
 
 
-    return Books;
+    return Book;
 }
 
 

@@ -1,30 +1,30 @@
 import * as Sequelize from 'sequelize';
 
 export interface AuthorAttributes {
-    id?: string;
-    firstName?: string;
-    lastName?: string;
-    email?: string;
+    Id?: string;
+    FirstName?: string;
+    LastName?: string;
+    Email?: string;
 }
 
 export interface AuthorInstance extends Sequelize.Instance<AuthorAttributes> {
-    id: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    createdAt: string;
-    updatedAt: string;
+    Id: string;
+    FirstName: string;
+    LastName: string;
+    Email: string;
+    CreatedAt: string;
+    UpdatedAt: string;
 }
 
 export  function defineAuthors(sequelize: Sequelize.Sequelize, dataTypes: Sequelize.DataTypes) {
-    const Authors = sequelize.define('Authors', {
-        id: dataTypes.UUIDV4,
-        firstName: dataTypes.STRING,
-        lastName: dataTypes.STRING,
-        email: dataTypes.STRING
+    const Author = sequelize.define('Author', {
+        Id: dataTypes.UUIDV4,
+        FirstName: dataTypes.STRING,
+        LastName: dataTypes.STRING,
+        Email: dataTypes.STRING
     });
 
-    return Authors;
+    return Author;
 }
 
 

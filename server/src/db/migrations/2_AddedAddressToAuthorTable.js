@@ -1,6 +1,6 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
-      return queryInterface.addColumn("Authors", 'Address', {
+      return queryInterface.addColumn("Author", 'Address', {
           type: Sequelize.STRING,
           allowNull: true
         });

@@ -5,12 +5,12 @@ import * as Sequelize from 'sequelize'
 const config = require('../config/config.json')
 
 import { AuthorInstance, AuthorAttributes } from './authors'
-import { BookInstance, BooksAttributes } from './books'
-import { TagInstance, TagsAttributes } from './tags'
+import { BookInstance, BookAttributes } from './books'
+import { TagInstance, TagAttributes } from './tags'
 
 interface DbConnection {
   Author: Sequelize.Model<AuthorInstance, AuthorAttributes>,
-  Book: Sequelize.Model<BookInstance, BooksAttributes>
+  Book: Sequelize.Model<BookInstance, BookAttributes>
 }
 
 let db: any = {}
