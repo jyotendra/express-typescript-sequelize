@@ -1,1 +1,0 @@
-{"version":3,"file":"tags.js","sourceRoot":"","sources":["../../../src/db/models/tags.ts"],"names":[],"mappings":";;AAcA,oBAAmC,SAA8B,EAAE,SAA8B;IAC7F,MAAM,GAAG,GAAG,SAAS,CAAC,MAAM,CAAC,KAAK,EAAE;QAChC,EAAE,EAAE,SAAS,CAAC,MAAM;QACpB,KAAK,EAAE,SAAS,CAAC,MAAM;KAC1B,CAAC,CAAC;IAEH,MAAM,CAAC,GAAG,CAAC;AACf,CAAC;AAPD,6BAOC"}

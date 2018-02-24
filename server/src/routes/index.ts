@@ -1,9 +1,10 @@
-import authorRoute from '@routes/authors';
-import * as express from 'express';
+import authorRoute from "./authors";
+import * as express from "express";
+import { Router } from "express";
 
-const allRoutes = [authorRoute]
-const apiRoute = express.Router();
+const allRoutes: Array<Router> = [authorRoute];
+const apiRoute: Router = express.Router();
 
-apiRoute.use('/api', allRoutes);
+apiRoute.use("/api", allRoutes);
 
 export default apiRoute;

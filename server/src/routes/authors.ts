@@ -1,9 +1,9 @@
-import * as express from 'express';
-import {Router} from 'express';
-import { getAuthors } from '@controllers/author/author.get';
+import * as express from "express";
+import {Router} from "express";
+import { getAuthors } from "../controllers/author/author.get";
 
-const router = Router();
+const router: Router = Router();
 
-router.get('/author', getAuthors);
+router.get("/author", getAuthors);
 
 export default router;
