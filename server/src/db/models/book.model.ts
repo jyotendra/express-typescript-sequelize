@@ -1,25 +1,30 @@
 import * as Sequelize from "sequelize";
 
 export interface IBookAttributes {
-  Id?: string;
-  Title?: string;
+  id?: string;
+  title?: string;
 }
 
 export interface IBookInstance extends Sequelize.Instance<IBookAttributes> {
-  Id: string;
-  Title: string;
-  CreatedAt: string;
-  UpdatedAt: string;
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export default function defineBooks(
   sequelize: Sequelize.Sequelize,
   dataTypes: Sequelize.DataTypes
 ): Sequelize.Model<IBookInstance, IBookAttributes> {
-  const Book: Sequelize.Model<IBookInstance, IBookAttributes> = sequelize.define("Book", {
-    Id: dataTypes.UUIDV4,
-    Title: dataTypes.STRING
-  });
+  const Book: Sequelize.Model<
+    IBookInstance,
+    IBookAttributes
+  > = sequelize.define(
+    "Book",
+    {
+      title: dataTypes.STRING
+    }
+  );
 
   return Book;
 }

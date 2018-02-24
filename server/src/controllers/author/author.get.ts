@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { AuthorsDao } from "../../dao/_index";
 import * as Bluebird from "bluebird";
-import { IAuthorInstance } from "db/models/authors";
+import { AuthorsDao } from "../../dao/_index.dao";
+import { IAuthorInstance } from "../../db/models/author.model";
 
 export function getAuthors(req: Request, res: Response): Bluebird<any> {
   return AuthorsDao.findAll()

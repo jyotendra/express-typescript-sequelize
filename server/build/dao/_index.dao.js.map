@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/dao/_index.dao.ts"],"names":[],"mappings":";;AAAA,2CAA2C;AAElC,gCAAU","file":"_index.dao.js","sourcesContent":["import * as AuthorsDao from \"./author.dao\";\r\n\r\nexport { AuthorsDao };\r\n"],"sourceRoot":"../../src"}

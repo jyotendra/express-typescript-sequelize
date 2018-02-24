@@ -1,15 +1,15 @@
 import * as Sequelize from "sequelize";
 
 export interface ITagAttributes {
-  Id?: string;
+  id?: string;
   Title?: string;
 }
 
 export interface ITagInstance {
-  Id: string;
-  Title: string;
-  CreatedAt: string;
-  UpdatedAt: string;
+  id: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
 }
 
 export default function defineTags(
@@ -19,8 +19,10 @@ export default function defineTags(
   const Tag: Sequelize.Model<ITagInstance, ITagAttributes> = sequelize.define(
     "Tag",
     {
-      Id: dataTypes.UUIDV4,
-      Title: dataTypes.STRING
+      title: dataTypes.STRING
+    },
+    {
+      freezeTableName: true
     }
   );
 

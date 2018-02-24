@@ -2,7 +2,7 @@ import * as express from "express";
 import { Express } from "express";
 import {install as sourceMapInstall} from "source-map-support";
 
-import routes from "./routes/index";
+import routes from "./routes/index.route";
 
 // console.log(config);
 

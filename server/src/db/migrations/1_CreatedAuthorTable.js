@@ -1,26 +1,26 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Author", {
-      Id: {
+    return queryInterface.createTable("Authors", {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      FirstName: {
+      firstName: {
         type: Sequelize.STRING
       },
-      LastName: {
+      lastName: {
         type: Sequelize.STRING
       },
-      Email: {
+      email: {
         type: Sequelize.STRING
       },
-      CreatedAt: {
+      createdAt: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      UpdatedAt: {
+      updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
       }

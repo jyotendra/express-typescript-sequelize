@@ -4,9 +4,11 @@ import * as Sequelize from "sequelize";
 
 const config: any = require("../../../config/database.json");
 
-import { IAuthorInstance, IAuthorAttributes } from "./authors";
-import { IBookInstance, IBookAttributes } from "./books";
-import { ITagInstance, ITagAttributes } from "./tags";
+import { IAuthorInstance, IAuthorAttributes } from "./author.model";
+import { IBookInstance, IBookAttributes } from "./book.model";
+import { ITagInstance, ITagAttributes } from "./tag.model";
+
+export const MODEL_NAMES: Array<string> = [];
 
 interface IDbConnection {
   Author: Sequelize.Model<IAuthorInstance, IAuthorAttributes>;
@@ -48,6 +50,8 @@ Object.keys(db).forEach(function(modelName: string): void {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+
 
 export default <IDbConnection>db;
 

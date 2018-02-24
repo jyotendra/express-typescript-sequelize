@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
 const config = require("../../../config/database.json");
+exports.MODEL_NAMES = [];
 let db = {};
 const dbConfig = config.development;
 const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, dbConfig);
@@ -26,4 +27,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 exports.default = db;
 
-//# sourceMappingURL=_index.js.map
+//# sourceMappingURL=_index.model.js.map

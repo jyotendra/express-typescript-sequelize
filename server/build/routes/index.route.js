@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const authors_1 = require("./authors");
+const author_route_1 = require("./author.route");
 const express = require("express");
-const allRoutes = [authors_1.default];
+const allRoutes = [author_route_1.default];
 const apiRoute = express.Router();
 apiRoute.use("/api", allRoutes);
 exports.default = apiRoute;
 
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.route.js.map

@@ -3,17 +3,17 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const todaysDate = new Date();
-    return queryInterface.bulkInsert('Author', [{
-      FirstName: 'John',
-      LastName: 'Doe',
-      Email: 'johndoe@abc.com',
-      CreatedAt: todaysDate.toUTCString(),
-      UpdatedAt: todaysDate.toUTCString(),
-      Address: 'abc street, xyz lane, ABC'
+    return queryInterface.bulkInsert('Authors', [{
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'johndoe@abc.com',
+      createdAt: todaysDate.toUTCString(),
+      updatedAt: todaysDate.toUTCString(),
+      address: 'abc street, xyz lane, ABC'
     }]);
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Person', null);
+    return queryInterface.bulkDelete('Authors', null);
   }
 };

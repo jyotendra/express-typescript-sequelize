@@ -1,4 +1,4 @@
-import authorRoute from "./authors";
+import authorRoute from "./author.route";
 import * as express from "express";
 import { Router } from "express";
 
