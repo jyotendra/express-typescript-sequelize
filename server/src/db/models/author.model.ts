@@ -1,32 +1,22 @@
-import * as Sequelize from "sequelize";
+import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt} from "sequelize-typescript";
 
-// const MODEL_NAME = 'Author';
+@Table
+export default class Author extends Model<Author> {
 
-export interface IAuthorAttributes {
-  id?: number;
-  firstName?: string;
-  lastName?: string;
-  email: string;
-}
-
-export interface IAuthorInstance extends Sequelize.Instance<IAuthorAttributes> {
-  id: number;
+  @Column
   firstName: string;
+
+  @Column
   lastName: string;
+
+  @Column
   email: string;
-  createdAt: string;
-  updatedAt: string;
+
+  @CreatedAt
+  createdAt: Date;
+
+  @UpdatedAt
+  updatedAt: Date;
 }
 
-export default function defineAuthors(
-  sequelize: Sequelize.Sequelize,
-  dataTypes: Sequelize.DataTypes
-): Sequelize.Model<IAuthorInstance, IAuthorAttributes> {
-  const Author: Sequelize.Model<IAuthorInstance,IAuthorAttributes> = sequelize.define("Author", {
-    firstName: dataTypes.STRING,
-    lastName: dataTypes.STRING,
-    email: dataTypes.STRING
-  });
 
-  return Author;
-}

@@ -1,16 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const _index_model_1 = require("../db/models/_index.model");
-function create(author) {
-    return _index_model_1.default.Author.create({
-        firstName: "Surya",
-        lastName: "Reddy",
-        email: "suryareddy@gmail.com"
-    });
-}
-exports.create = create;
+const author_model_1 = require("../db/models/author.model");
 function findAll() {
-    return _index_model_1.default.Author.findAll({ include: [{ all: true }] });
+    return author_model_1.default.findAll();
 }
 exports.findAll = findAll;
 
