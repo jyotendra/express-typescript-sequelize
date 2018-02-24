@@ -1,11 +1,13 @@
 # express-typescript-sequelize
 This project is initial setup for express, sequelize, typescript and webpack.
 
-# Caution
+### Caution
 
 To use sequelize-typescript, which I would suggest, you need to checkout the "ts-sqlz" branch with "git checkout ts-sqlz"
 
-To launch and test the server, got to "server" and "npm install".
+## Spinning the server
+
+To launch and test the server, go to "server" and "npm install".
 
 Post installation use "npm start" to spin the server.
 
