@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build:prod",
     "build:prod": "webpack --config webpack.prod.js",
-    "debug": "webpack | nodemon --inspect=9229 --inspect-brk ./dist/main.js"
+    "serve": "webpack && node ./dist/main.js",
+    "debug": "webpack --watch | nodemon --inspect=9229 --inspect-brk ./dist/main.js"
   },
   "dependencies": {
     "body-parser": "1.18.2",

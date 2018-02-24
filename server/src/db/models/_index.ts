@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as path from 'path'
 import * as Sequelize from 'sequelize'
 
-const config = require('../config/config.json')
+const config = require('../../../config/database.json');
 
 import { AuthorInstance, AuthorAttributes } from './authors'
 import { BookInstance, BookAttributes } from './books'
@@ -15,7 +15,12 @@ interface DbConnection {
 
 let db: any = {}
 
-const dbConfig = config[process.env.NODE_ENV]
+
+// const dbConfig = config[process.env.NODE_ENV]
+
+const dbConfig = config['development'];
+
+
 const sequelize = new Sequelize(
   dbConfig['database'],
   dbConfig['username'],

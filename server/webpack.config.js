@@ -5,7 +5,6 @@ module.exports = {
   entry: './src/index.ts',
   devtool: 'source-map',
   target: 'node',
-  watch: true,
   module: {
     rules: [
       {
@@ -20,8 +19,8 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ],
     alias: {
-      "@models": path.resolve(__dirname, 'src', 'models'),
-      "@routers": path.resolve(__dirname, 'src', 'routers'),
+      "@models": path.resolve(__dirname, 'src', 'db', 'models'),
+      "@routes": path.resolve(__dirname, 'src', 'routes'),
       "@doa": path.resolve(__dirname, 'src', 'doa'),
       "@controllers": path.resolve(__dirname, 'src', 'controllers'),
       "@config": path.resolve(__dirname, 'config'),
@@ -38,5 +37,6 @@ module.exports = {
     new webpack.SourceMapDevToolPlugin({
       test: /\.ts$/i
     })
-  ]
+  ],
+  externals: ['pg', 'sqlite3', 'tedious', 'pg-hstore']
 };
