@@ -3,19 +3,19 @@ import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt, DataType} from "seq
 @Table
 export default class Author extends Model<Author> {
 
-  @Column({type: DataType.TEXT})
+  @Column
   firstName: string;
 
-  @Column({type: DataType.TEXT})
+  @Column
   lastName: string;
 
-  @Column({type: DataType.TEXT})
+  @Column
   email: string;
 
-  @Column({type: DataType.DATE})
+  @CreatedAt
   createdAt: Date;
 
-  @Column({type: DataType.DATE})
+  @UpdatedAt
   updatedAt: Date;
 }
 

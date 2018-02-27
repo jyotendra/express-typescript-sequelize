@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const _index_dao_1 = require("../../dao/_index.dao");
 function getAuthors(req, res) {
-    return _index_dao_1.AuthorsDao.findAll()
+    return _index_dao_1.AuthorsDao.getAllAuthors()
         .then(authors => res.status(200).send(authors))
         .catch(err => console.log(err));
 }

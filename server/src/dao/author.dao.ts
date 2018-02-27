@@ -2,14 +2,16 @@ import Author from "../db/models/author.model";
 import * as Bluebird from "bluebird";
 import { IFindOptions } from "sequelize-typescript";
 
-// export function create(author: IAuthorInstance): Bluebird<IAuthorInstance> {
-//     return db.Author.create({
-//         firstName: "Surya",
-//         lastName: "Reddy",
-//         email: "suryareddy@gmail.com"
-//     });
-// }
 
-export function findAll(): Bluebird<Author[]> {
+export function getAllAuthors(): Bluebird<Author[]> {
     return Author.findAll<Author>();
+}
+
+export function createAuthor(model: any): Bluebird<Author> {
+    try {
+        const author: Author = Author.build(model);
+        return author.save();
+    } catch(ex) {
+        console.log("Error occurred while saving authors");
+    }
 }
