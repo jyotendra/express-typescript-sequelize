@@ -13,23 +13,23 @@ const sequelize_typescript_1 = require("sequelize-typescript");
 let Author = class Author extends sequelize_typescript_1.Model {
 };
 __decorate([
-    sequelize_typescript_1.Column,
+    sequelize_typescript_1.Column({ type: sequelize_typescript_1.DataType.TEXT }),
     __metadata("design:type", String)
 ], Author.prototype, "firstName", void 0);
 __decorate([
-    sequelize_typescript_1.Column,
+    sequelize_typescript_1.Column({ type: sequelize_typescript_1.DataType.TEXT }),
     __metadata("design:type", String)
 ], Author.prototype, "lastName", void 0);
 __decorate([
-    sequelize_typescript_1.Column,
+    sequelize_typescript_1.Column({ type: sequelize_typescript_1.DataType.TEXT }),
     __metadata("design:type", String)
 ], Author.prototype, "email", void 0);
 __decorate([
-    sequelize_typescript_1.CreatedAt,
+    sequelize_typescript_1.Column({ type: sequelize_typescript_1.DataType.DATE }),
     __metadata("design:type", Date)
 ], Author.prototype, "createdAt", void 0);
 __decorate([
-    sequelize_typescript_1.UpdatedAt,
+    sequelize_typescript_1.Column({ type: sequelize_typescript_1.DataType.DATE }),
     __metadata("design:type", Date)
 ], Author.prototype, "updatedAt", void 0);
 Author = __decorate([

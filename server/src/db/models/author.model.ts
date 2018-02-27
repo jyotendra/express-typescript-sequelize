@@ -1,21 +1,21 @@
-import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt} from "sequelize-typescript";
+import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt, DataType} from "sequelize-typescript";
 
 @Table
 export default class Author extends Model<Author> {
 
-  @Column
+  @Column({type: DataType.TEXT})
   firstName: string;
 
-  @Column
+  @Column({type: DataType.TEXT})
   lastName: string;
 
-  @Column
+  @Column({type: DataType.TEXT})
   email: string;
 
-  @CreatedAt
+  @Column({type: DataType.DATE})
   createdAt: Date;
 
-  @UpdatedAt
+  @Column({type: DataType.DATE})
   updatedAt: Date;
 }
 

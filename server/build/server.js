@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const source_map_support_1 = require("source-map-support");
+const bodyParser = require("body-parser");
 const index_route_1 = require("./routes/index.route");
 const _index_model_1 = require("./db/models/_index.model");
 if (process.env.NODE_ENV !== "production") {
@@ -20,6 +21,7 @@ const port = 3000;
     yield _index_model_1.sequelize.sync();
 }))();
 const app = express();
+app.use(bodyParser.json());
 app.use("/", index_route_1.default);
 app.listen(port, () => console.log(`App is running on port: ${port}`));
 
