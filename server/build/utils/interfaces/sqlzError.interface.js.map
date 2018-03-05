@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/utils/interfaces/sqlzError.interface.ts"],"names":[],"mappings":"","file":"sqlzError.interface.js","sourcesContent":["export interface ISeqlzErrorObject {\r\n    errorCode: number;\r\n    message: string;\r\n}"],"sourceRoot":"../../../src"}
