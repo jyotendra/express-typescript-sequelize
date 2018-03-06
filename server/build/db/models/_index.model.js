@@ -1,30 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = require("fs");
-const path = require("path");
-const Sequelize = require("sequelize");
+const sequelize_typescript_1 = require("sequelize-typescript");
+const author_model_1 = require("./author.model");
+const user_model_1 = require("./user.model");
 const config = require("../../../config/database.json");
-exports.MODEL_NAMES = [];
-let db = {};
 const dbConfig = config.development;
-const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, dbConfig);
-const basename = path.basename(module.filename);
-fs
-    .readdirSync(__dirname)
-    .filter(function (file) {
-    return (file.indexOf(".") !== 0) && (file !== basename) && (file.slice(-3) === ".js");
-})
-    .forEach(function (file) {
-    const model = sequelize.import(path.join(__dirname, file));
-    db[model.name] = model;
-});
-Object.keys(db).forEach(function (modelName) {
-    if (db[modelName].associate) {
-        db[modelName].associate(db);
-    }
-});
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-exports.default = db;
+exports.sequelize = new sequelize_typescript_1.Sequelize(Object.assign({}, dbConfig));
+exports.sequelize.addModels([author_model_1.default, user_model_1.default]);
 
 //# sourceMappingURL=_index.model.js.map

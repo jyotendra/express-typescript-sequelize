@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     const todaysDate = new Date();
-    return queryInterface.bulkInsert('Authors', [{
+    return queryInterface.bulkInsert('Author', [{
       firstName: 'John',
       lastName: 'Doe',
       email: 'johndoe@abc.com',
@@ -14,6 +14,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Authors', null);
+    return queryInterface.bulkDelete('Author', null);
   }
 };

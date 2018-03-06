@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const _index_model_1 = require("../db/models/_index.model");
-function create(author) {
-    return _index_model_1.default.Author.create({
-        firstName: "Surya",
-        lastName: "Reddy",
-        email: "suryareddy@gmail.com"
-    });
+const author_model_1 = require("../db/models/author.model");
+function getAllAuthors() {
+    return author_model_1.default.findAll();
 }
-exports.create = create;
-function findAll() {
-    return _index_model_1.default.Author.findAll({ include: [{ all: true }] });
+exports.getAllAuthors = getAllAuthors;
+function createAuthor(model) {
+    try {
+        const author = author_model_1.default.build(model);
+        return author.save();
+    }
+    catch (ex) {
+        console.log("Error occurred while saving authors");
+    }
 }
-exports.findAll = findAll;
+exports.createAuthor = createAuthor;
 
 //# sourceMappingURL=author.dao.js.map
