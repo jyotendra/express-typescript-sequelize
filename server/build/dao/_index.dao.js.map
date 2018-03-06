@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/dao/_index.dao.ts"],"names":[],"mappings":";;AAAA,2CAA2C;AAGlC,gCAAU;AAFnB,sCAAsC;AAEjB,0BAAO","file":"_index.dao.js","sourcesContent":["import * as AuthorsDao from \"./author.dao\";\r\nimport * as UserDao from \"./user.dao\";\r\n\r\nexport { AuthorsDao, UserDao };\r\n"],"sourceRoot":"../../src"}
