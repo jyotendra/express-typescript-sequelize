@@ -1,10 +1,5 @@
 import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt, DataType} from "sequelize-typescript";
-
-
-export interface IUserRequestModel {
-  email: string;
-  password: string;
-}
+import AccessToken from "./access-token.model";
 
 @Table
 export default class User extends Model<User> {
@@ -15,6 +10,9 @@ export default class User extends Model<User> {
   @Column
   passwordHash: string;
 
+  @HasMany(() => AccessToken)
+  tokens: AccessToken[];
+
   @CreatedAt
   createdAt: Date;
 
@@ -23,3 +21,12 @@ export default class User extends Model<User> {
 }
 
 
+export interface IUserCreateRequestModel {
+  email: string;
+  password: string;
+}
+
+export interface ISigninUSerModel {
+  email: string;
+  password: string;
+}
