@@ -17,6 +17,11 @@ export function signInUser(
     return res.status(422).json({ errors: errors.mapped() });
   }
   UserDao.signinUser(req.body).then(user => {
+    if(!user) {
+      return res.status(400).json({
+        error: "User not found"
+      });
+    };
     const newModel = { id: user.id, email: user.email };
     generateToken(newModel).then((token: string) => res.json(token));
   });
