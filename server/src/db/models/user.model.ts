@@ -1,8 +1,12 @@
-import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt, DataType} from "sequelize-typescript";
+import {Table, Column, Model, HasMany, CreatedAt, UpdatedAt, DataType, PrimaryKey} from "sequelize-typescript";
 import AccessToken from "./access-token.model";
 
 @Table
 export default class User extends Model<User> {
+
+  @PrimaryKey
+  @Column
+  id: number;
 
   @Column
   email: string;
@@ -10,14 +14,15 @@ export default class User extends Model<User> {
   @Column
   passwordHash: string;
 
-  @HasMany(() => AccessToken)
-  tokens: AccessToken[];
-
   @CreatedAt
   createdAt: Date;
 
   @UpdatedAt
   updatedAt: Date;
+
+  // Relations are defined below
+  @HasMany(() => AccessToken)
+  tokens: AccessToken[];
 }
 
 

@@ -1,27 +1,32 @@
-import {Table, Column, Model, HasMany, BelongsTo, CreatedAt, UpdatedAt, DataType} from "sequelize-typescript";
+import {
+  Table,
+  Column,
+  Model,
+  HasMany,
+  BelongsTo,
+  CreatedAt,
+  UpdatedAt,
+  DataType,
+  ForeignKey
+} from "sequelize-typescript";
 import User from "./user.model";
-
 
 @Table
 export default class AcccessToken extends Model<AcccessToken> {
-
-  @Column
-  accessToken: string;
+  @Column accessToken: string;
 
   @BelongsTo(() => User)
-  userId: User;
+  user: User;
 
+  @ForeignKey(() => User)
   @Column
-  deviceId: string;
+  userId: number;
 
-  @Column
-  isActive: boolean;
+  @Column deviceId: string;
 
-  @CreatedAt
-  createdAt: Date;
+  @Column isActive: boolean;
 
-  @UpdatedAt
-  updatedAt: Date;
+  @CreatedAt createdAt: Date;
 
+  @UpdatedAt updatedAt: Date;
 }
-
