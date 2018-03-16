@@ -3,9 +3,11 @@ import * as Bluebird from "bluebird";
 import * as sequelize from "sequelize";
 
 import { UserDao } from "../../../dao/_index.dao";
+import { saveToken } from "../../../dao/access-token.dao";
 import { Result, validationResult } from "express-validator/check";
 import { ISeqlzErrorObject } from "../../../utils/interfaces/sqlzError.interface";
 import { generateToken, validateToken } from "../../../utils/jwt.util";
+
 
 export function signInUser(
   req: Request,
@@ -22,8 +24,11 @@ export function signInUser(
         error: "User not found"
       });
     };
-    const newModel = { id: user.id, email: user.email };
-    generateToken(newModel).then((token: string) => res.json(token));
+    const newModel = { userId: user.id, email: user.email };
+    generateToken(newModel).then((token: string) => {
+      saveToken(Object.assign({}, newModel ,{accessToken: token}));
+      res.json(token);
+    });
   });
 }
 

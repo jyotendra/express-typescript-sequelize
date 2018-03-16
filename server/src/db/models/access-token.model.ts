@@ -30,3 +30,10 @@ export default class AcccessToken extends Model<AcccessToken> {
 
   @UpdatedAt updatedAt: Date;
 }
+
+
+export interface IUpdateAccessTokenModel {
+  userId: number;
+  email: string;
+  accessToken: string;
+}
